@@ -1,0 +1,2 @@
+build\debug\CP
+pause

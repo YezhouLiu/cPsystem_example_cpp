@@ -1,0 +1,7 @@
+A simple cP system example, the system has: (1) three terms f(aaaaa), f(bbbb), and f(ccc); (2) three stateless rules: f(a_) ->+ f(e_), f(b_) ->+ f(dfg), and f(cX) ->+ f(X).
+
+The rules and the system are only for illustration purpose, which may not fully work as a complete cP system.
+
+To compile, build, and run the project, CMake is needed. 
+
+The build and run commmands are written as .bat and .sh files.
