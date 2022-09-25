@@ -1,4 +1,4 @@
-A simple cP system example, the system has: (1) three terms f(aaaaa), f(bbbb), and f(ccc); (2) three stateless rules: f(a_) ->+ f(e_), f(b_) ->+ f(dfg), and f(cX) ->+ f(X).
+A simple cP system example, the system has: (1) three terms f(aaaaa), f(bbbb), and f(ccc); (2) three stateless rules: f(aX) ->+ f(eX), f(bX) ->+ f(dfgX), and f(cX) ->+ f(X).
 
 The rules and the system are only for illustration purposes.
 
