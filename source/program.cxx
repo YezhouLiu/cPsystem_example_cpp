@@ -14,9 +14,9 @@
 void runProgram()
 {
 	std::vector<Atom> v1(5,'a'), v2(4,'b'), v3(3,'c');
-	SimpleSystem::bag1.setMultiset('f', v1);
-	SimpleSystem::bag2.setMultiset('f', v2);
-	SimpleSystem::bag3.setMultiset('f', v3);
+	SimpleSystem::bag1.setMultiset('f', v1); //f(aaaaa)
+	SimpleSystem::bag2.setMultiset('f', v2); //f(bbbb)
+	SimpleSystem::bag3.setMultiset('f', v3); //f(ccc)
 	std::cout << "*******************************\n" << "Initial multisets:\n";
 	SimpleSystem::bag1.printTerms();
 	SimpleSystem::bag2.printTerms();
@@ -33,7 +33,7 @@ void rewrite()
 {
 	#ifdef __linux__
 		pthread_t worker;
-		pthread_create(&worker, nullptr, workerThread, nullptr);
+		pthread_create(&worker, nullptr, workerThread, nullptr); //Linux: creating more threads here
 	#else
 		std::thread* worker1 = new std::thread(worker);
 		std::thread* worker2 = new std::thread(worker);
@@ -84,7 +84,7 @@ void worker()
 			SimpleSystem::workingBag = 1;
 		auto th_id = std::this_thread::get_id();
 		#ifndef __linux__
-		std::cout << "Current working bag: " << workingOn << ", thread " << th_id << "\n";
+		std::cout << "Current working bag: " << workingOn << ", thread " << th_id << "\n"; //print function may race here, but let's keep it in this toy program
 		#endif
 		lock0.unlock();
 
